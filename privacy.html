@@ -10,6 +10,76 @@
     <!-- External Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .menu-toggle {
+            display: none;
+            color: var(--primary);
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 768px) {
+            /* Fix overlapping mini top bar */
+            .mini-top-bar .container {
+                flex-direction: column !important;
+                text-align: center !important;
+                gap: 10px !important;
+                padding: 10px !important;
+            }
+            .mini-contact {
+                flex-direction: column !important;
+                gap: 5px !important;
+            }
+            .mini-links {
+                justify-content: center !important;
+                margin-top: 5px !important;
+            }
+
+            /* Header and Nav toggle */
+            .header-container {
+                position: relative;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            nav {
+                display: none !important;
+                position: absolute !important;
+                top: 100% !important;
+                left: 0 !important;
+                width: 100% !important;
+                height: auto !important;
+                background: var(--bg-white) !important;
+                flex-direction: column !important;
+                padding: 20px !important;
+                box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1) !important;
+                z-index: 1000 !important;
+            }
+            nav.active {
+                display: flex !important;
+            }
+            .nav-menu {
+                flex-direction: column !important;
+                width: 100% !important;
+            }
+            .nav-actions {
+                flex-direction: column !important;
+                width: 100% !important;
+            }
+            
+            /* Footer Fixes */
+            .footer-contact-list li {
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr !important;
+                text-align: center !important;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -35,13 +105,11 @@
                 <img src="images/logo.svg" alt="Bharath University Logo" class="header-logo">
             </a>
             
-            <button class="mobile-toggle" aria-label="Toggle Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
 
-            <nav>
+            <nav id="nav-links">
                 <ul class="nav-menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="index.html#programs">Programs</a></li>
@@ -153,5 +221,11 @@
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            document.getElementById('nav-links').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
