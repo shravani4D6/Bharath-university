@@ -339,7 +339,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const handleBotResponse = (userText) => {
         const text = userText.toLowerCase();
-        let reply = "I'm not sure about that. Please ask about 'admission', 'courses', 'fees', or 'VVISM contact details', or contact our counselor directly!";
+        let reply = "I'm not sure about that. Please ask about 'admission', 'courses', 'fees', or 'BIHER contact details', or contact our counselor directly!";
         
         if (text.includes('admission') || text.includes('apply') || text.includes('register')) {
             reply = "To apply for admissions 2026-27, please go to the Signup page by clicking 'Apply Now' in the header. Filling out the form takes just 2 minutes!";
@@ -347,8 +347,8 @@ document.addEventListener('DOMContentLoaded', () => {
             reply = "We offer B.Tech (CSE, ECE), MBBS, BDS, MBA, BBA, and Integrated BA LLB. Check out the 'Programs' section on the homepage for details!";
         } else if (text.includes('fee') || text.includes('cost') || text.includes('payment')) {
             reply = "Application fee is non-refundable. You can calculate and stage course fees from the pay fees tab inside your logged-in student dashboard.";
-        } else if (text.includes('vvism') || text.includes('contact') || text.includes('consent') || text.includes('dnc') || text.includes('phone')) {
-            reply = "By submitting, you agree to allow Vishwa Vishwani Institute of Systems & Management (VVISM) and partners to contact you via SMS, Email, WhatsApp, RCS, or Call, overriding DNC registry status.";
+        } else if (text.includes('biher') || text.includes('contact') || text.includes('consent') || text.includes('dnc') || text.includes('phone')) {
+            reply = "By submitting, you agree to allow Bharath Institute of Higher Education and Research (BIHER) and partners to contact you via SMS, Email, WhatsApp, RCS, or Call, overriding DNC registry status.";
         } else if (text.includes('hello') || text.includes('hi') || text.includes('hey')) {
             reply = "Hello! Welcome to Bharath University Helpdesk. How can I assist you with your admissions inquiry today?";
         }
