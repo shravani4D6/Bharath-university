@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applicant Dashboard | Bharath University (BIHER)</title>
+    <meta name="description" content="View admission application status and upload verification files.">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- External Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="dashboardContainer">
+
+    <!-- MAIN HEADER -->
+    <header style="border-bottom: 1.5px solid var(--border); box-shadow: var(--shadow-sm); z-index: 10;">
+        <div class="container header-container">
+            <a href="index.html" class="logo-img-link">
+                <img src="images/logo.svg" alt="Bharath University Logo" class="dash-header-logo">
+            </a>
+            <div style="font-weight: 600; color: var(--primary);">
+                <i class="fas fa-graduation-cap"></i> Admission Desk: 2026
+            </div>
+        </div>
+    </header>
+
+    <!-- DASHBOARD PANEL LAYOUT -->
+    <main class="dashboard-grid">
+        <!-- Sidebar Navigation -->
+        <aside class="dash-sidebar">
+            <div class="user-profile-summary">
+                <div class="profile-avatar">S</div>
+                <h3 class="profile-name js-user-name">Loading...</h3>
+                <p class="profile-email js-user-email">Loading...</p>
+            </div>
+
+            <ul class="dash-nav">
+                <li><a href="#" class="dash-nav-link active"><i class="fas fa-columns"></i> Workspace Home</a></li>
+                <li><a href="#" class="dash-nav-link" onclick="alert('Document upload window is open below!')"><i class="fas fa-file-alt"></i> Documents</a></li>
+                <li><a href="#" class="dash-nav-link" onclick="alert('Online fees portal will open shortly!')"><i class="fas fa-credit-card"></i> Pay Fees</a></li>
+                <li><a href="terms.html" class="dash-nav-link"><i class="fas fa-gavel"></i> T&amp;C Agreement</a></li>
+                <li><a href="privacy.html" class="dash-nav-link"><i class="fas fa-shield-alt"></i> Privacy Guard</a></li>
+            </ul>
+
+            <div class="dash-logout">
+                <a href="#" class="dash-nav-link" id="logoutBtn" style="color: var(--accent);"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <section class="dash-content">
+            <div class="dash-header">
+                <div>
+                    <h2>Welcome back, <span class="js-user-name">Applicant</span>!</h2>
+                    <p class="text-muted">Here is the current state of your academic admission request.</p>
+                </div>
+                <span class="badge" style="margin-bottom: 0; background-color: var(--success-light); border-color: var(--success); color: var(--success);">Session Active</span>
+            </div>
+
+            <!-- Stats Deck -->
+            <div class="dash-card-grid">
+                <div class="dash-stat-card">
+                    <div class="dash-stat-icon"><i class="fas fa-folder-open"></i></div>
+                    <div>
+                        <h4>Application ID</h4>
+                        <div class="value">BU-2026-8942</div>
+                    </div>
+                </div>
+
+                <div class="dash-stat-card">
+                    <div class="dash-stat-icon gold"><i class="fas fa-clipboard-check"></i></div>
+                    <div>
+                        <h4>Portal Status</h4>
+                        <div class="value" style="font-size: 16px; color: var(--secondary-hover);">Under Review</div>
+                    </div>
+                </div>
+
+                <div class="dash-stat-card">
+                    <div class="dash-stat-icon"><i class="fas fa-book-open"></i></div>
+                    <div>
+                        <h4>Selected Course</h4>
+                        <div class="value js-user-course" style="font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;">Loading...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Admission Progress Tracker -->
+            <div class="admission-track-card">
+                <h3>Application Verification Roadmap</h3>
+                <div class="progress-track">
+                    <div class="progress-bar-fill"></div>
+                    
+                    <div class="step-node completed">
+                        <div class="node-bullet"><i class="fas fa-check"></i></div>
+                        <div class="node-label">Registration</div>
+                    </div>
+
+                    <div class="step-node completed">
+                        <div class="node-bullet"><i class="fas fa-check"></i></div>
+                        <div class="node-label">Inquiry &amp; Fees</div>
+                    </div>
+
+                    <div class="step-node active">
+                        <div class="node-bullet">3</div>
+                        <div class="node-label">Document Review</div>
+                    </div>
+
+                    <div class="step-node">
+                        <div class="node-bullet">4</div>
+                        <div class="node-label">Final Acceptance</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Document Upload -->
+            <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 30px;">
+                <div class="glass-card" style="padding: 30px; box-shadow: var(--shadow-sm); border: 1px solid var(--border);">
+                    <h3 style="color: var(--primary); margin-bottom: 12px; font-weight: 700;"><i class="fas fa-cloud-upload-alt"></i> Stage Academic Certificates</h3>
+                    <p class="text-muted" style="font-size: 14px; margin-bottom: 24px;">Please submit scanned PDFs of your 10th Standard Marksheet, 12th Standard Marksheet, and Identity Proof for verification.</p>
+                    
+                    <div style="border: 2px dashed var(--border); border-radius: var(--radius-md); padding: 30px; text-align: center; background-color: var(--bg-light);">
+                        <i class="fas fa-file-pdf" style="font-size: 40px; color: var(--text-muted); margin-bottom: 12px;"></i>
+                        <h4 style="font-size: 15px; margin-bottom: 6px;">Select verification document</h4>
+                        <p class="text-muted" style="font-size: 12px; margin-bottom: 20px;">Accepted formats: PDF up to 5MB</p>
+                        
+                        <label for="fileUpload" class="btn btn-primary" style="padding: 10px 20px; font-size: 14px;">Browse Files</label>
+                        <input type="file" id="fileUpload" style="display: none;" accept=".pdf">
+                        <p id="uploadStatus" style="font-size: 13px; margin-top: 15px; font-weight: 500;"></p>
+                    </div>
+                </div>
+
+                <div class="glass-card" style="padding: 30px; box-shadow: var(--shadow-sm); border: 1px solid var(--border); background-color: var(--primary); color: #fff;">
+                    <h3 style="color: var(--secondary); margin-bottom: 16px; font-weight: 700;"><i class="fas fa-user-tie"></i> Admission Counselor</h3>
+                    <p style="font-size: 14.5px; opacity: 0.9; margin-bottom: 20px; line-height: 1.7;">A counselor has been assigned to assist you with document reviews and fees structure calculations.</p>
+                    
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+                        <div class="flex-center" style="width: 48px; height: 48px; background: rgba(255,255,255,0.1); border-radius: 50%; color: var(--secondary); font-size: 20px;">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 16px; font-weight: 600;">Prof. A. K. Sundar</h4>
+                            <p style="font-size: 12px; opacity: 0.7;">Senior Admissions Officer</p>
+                        </div>
+                    </div>
+
+                    <a href="tel:+919444012345" class="btn btn-secondary" style="width: 100%; border-radius: var(--radius-md);"><i class="fas fa-phone-alt"></i> Call Counselor</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>
